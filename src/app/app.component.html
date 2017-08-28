@@ -1,0 +1,35 @@
+<div class="jumbotron">
+<div class="container">
+
+  <h1 class="display-3">Todo List - Angular 2 + Cloudant</h1>
+ 
+</div>
+</div>
+
+<div class="container">
+  <div class="row">&nbsp;</div>
+  
+  <form class="form-inline" [formGroup]="form" (submit)="addData($event)">
+    <div class="row">
+      <div class="col-xs-12">
+        <div class="form-group" formGroupName="name">
+          <input class="form-control col-sm-10 " formControlName="testEvent" type="text" placeholder="Enter new value">
+        </div>
+        <button class="btn btn-primary">Todo</button>
+      </div>
+    </div>
+  </form>
+
+  <div class="row">&nbsp;</div>
+
+  <ul class="list-group">
+    <li class="list-group-item" *ngFor="let message of messages">
+
+      <button type="button" class="close" aria-label="Close" (click)="deleteToDo(message)">
+        <span aria-hidden="true">&times;</span>
+      </button>
+      {{ message.moreandmore }}
+    </li>
+  </ul>
+
+</div>
